@@ -1,0 +1,102 @@
+
+*{
+	margin:0;
+	padding:0;
+	text-decoration: none;
+	color: #46a3ff;
+	font-family: Arial, Helvetica;
+}
+
+
+#csstext{
+	margin: 0;
+
+	font-weight: bold;
+	font-size: 20px;
+	font-style: italic;
+	letter-spacing: 3px;
+	text-shadow: 5px 10px 3px black;
+	background-color: ;
+
+}
+body{
+background-color: #000017;}
+
+#wrapper{
+	width: 800px;
+	margin: 20px auto;
+	}
+
+header{
+
+		min-height: 60px;
+		font-size: 65px;
+		font-style: italic;
+
+		letter-spacing: 3px;
+		border-radius: 5px;
+		fontcolor: #b827b3;
+		}
+			#hTitle{
+		color: #0067ce;
+		text-shadow: 3px 3px 3px #174b99;
+			}
+
+
+nav{
+	margin-top: 20px;
+	border-color: #3980D1;
+	border-width: 1.5px;
+	border-radius: 7px;
+	border-style: solid;
+
+	}
+nav a{
+	margin-left: 110px;
+	color: #46a3ff;
+	font-size: 18px;
+
+
+	}
+nav a:hover{
+	color:#007dfb;
+	}
+
+
+
+#maincontent{
+		margin-top: 20px;
+		margin-bottom: 20px;
+		min-height : 350px;
+		padding-left: 40px;
+		border-color: #3980D1;
+
+		border-width: 1.5px;
+		border-radius: 10px;
+		border-style: solid;
+
+
+
+		}
+
+		#contenttxt{
+			margin: 0;
+			padding: 20px 0px 0px 20px;
+			align: center;
+		}
+
+footer{
+
+		height: nav;
+		border-color: #3980D1;
+		border-width: 1.5px;
+		border-style: solid;
+		border-radius: 7px;
+		}
+footer a{
+	margin-left: 90px;
+	}
+footer a:hover{
+	color:#007dfb;
+
+	}

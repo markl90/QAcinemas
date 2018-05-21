@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>QAC Ticket booking</title>
+<link href="main.css" rel="stylesheet" type="text/css" />
+</head>
+
+
+<body>
+
+<div id="wrapper">
+
+<header>
+		<p id="hTitle"><b>QA</b>Cinemas</p>
+	</header>
+
+
+
+
+
+<nav>
+			<a href="index.html">Home</a>
+			<a href="whatson.html">What's On</a>
+			<a href="about.html">About Us</a>
+			<a href="tickets.html">Tickets</a>
+
+		</nav>
+
+	<!----------------------------------->
+
+
+	<div id="maincontent">
+	   <br>
+<p id="csstext">QA Cinemas, Tickets booking page...</p>
+
+      <script type="text/javascript">
+var movie;
+			function selectFilm(){
+
+				var element =	document.getElementById("filmSelect");
+				movie = element.options[element.selectedIndex].text;
+				document.getElementById("filmSelection").innerHTML = "<i>You've chosen to watch </i>: "
+				+ movie;
+				if (movie === "-")
+				document.getElementById("filmSelection").innerHTML = "<i>Please choose a film </i> ";
+			}
+
+var dayChosen= 0;
+			function dateChoice(){
+						var date = new Date(document.getElementById("dateInp").value);
+					 	dayChosen = date.getDay();
+						var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+						var dateOutput = date.toLocaleDateString("en-US",options)
+
+
+					if (dayChosen == 3){
+						document.getElementById("time").innerHTML = "<i>You've chosen </i>: " +dateOutput
+						+ "&nbsp"
+						+"<br><br><i>Wednesday discount applied - &#163;2 off all tickets! ";
+					}
+					else{
+						document.getElementById("time").innerHTML = "<i>You've chosen </i>: "
+						+dateOutput
+						+ "<br><br><i>tip: book tickets on a Wednesday for discounted prices. ";
+					}
+					if (dateOutput === "Invalid Date"){
+						document.getElementById("time").innerHTML = "<i>Please choose a date </i> ";
+					}
+			}
+
+      function calculate()
+          {
+
+          var element =	document.getElementById("filmSelect");
+          var movie = element.options[element.selectedIndex].text;
+
+	        var staTickets =	document.getElementById("sta");
+	        var oapTickets =	document.getElementById("oap");
+	       	var stuTickets =	document.getElementById("stu");
+	        var chiTickets =	document.getElementById("chi");
+
+        	var staPrice=8;
+          var oapPrice=6;
+          var stuPrice=6;
+          var chiPrice=4;
+            if (dayChosen == 3 ){
+                staPrice -= 2;
+                oapPrice -= 2;
+                stuPrice -= 2;
+                chiPrice -= 2;
+							}
+
+        var staTotal=staTickets.value*staPrice;
+        var oapTotal=oapTickets.value*oapPrice;
+        var stuTotal=stuTickets.value*stuPrice;
+        var chiTotal=chiTickets.value*chiPrice;
+
+				var total = staTotal+oapTotal+stuTotal+chiTotal;
+
+				alert(
+					"You've chosen to watch " + movie + "\n\n"
+				+	"The total cost of tickets for this movie is £"
+				+total
+				);
+//alert(dayChosen);
+        }
+
+      </script>
+
+
+
+          <br>
+
+      <h4>Please choose what you would like to watch:</h4>
+      <select id="filmSelect">
+				<option value="film0">-</option>
+			  <option value="film1">Avengers</option>
+        <option value="film2">Solo</option>
+        <option value="film3">Deapool 2</option>
+        <option value="film4">A quiet Place</option>
+      </select>
+				<button style="width:100px" onclick="selectFilm()">select film</button>
+				<p id="filmSelection"></p>
+          <br>
+
+					<h4>Please choose when you would like to go:</h4>
+						<input id="dateInp" type="date" value="">
+							<button style="width:100px" onclick="dateChoice()">select date</button>
+								<p id="time"></p>
+			<br>
+
+        <!-- <p>choose the day of the week:</p>
+        <select id="daySelect">
+          <option value="mon">Monday</option>
+          <option value="tue">Tuesday</option>
+          <option value="wed">Wednesday</option>
+          <option value="thu">Thursday</option>
+          <option value="fri">Friday</option>
+          <option value="sat">Saturday</option>
+          <option value="sun">Sunday</option>
+        </select> -->
+
+
+        <h4>Please choose your tickets:</h4>
+
+
+      <p align="left">Standard -  &#163;8</p>
+			<input id="sta"  style="width:30px;height:;position:right;"></p><br>
+
+      <p>OAP <Small>(65+)</small>-  &#163;6  <br>
+				<input  id="oap"style="width:30px;height:;"></p><br>
+
+      <p>Student <Small><i>(student card required)</i></small>-  &#163;6 <br>
+				<input id="stu"style="width:30px;height:;"></p><br>
+
+      <p>Child <Small><i>(12 and under)</i></small>-  &#163;4  <br>
+				<input id="chi"style="width:30px;height:;"></p>
+
+     <br> <button style="width:100px" onclick="calculate()">check price</button>
+		 	<br><br>
+
+
+		</div>
+
+
+
+
+<footer>
+	<a href="#">Contact Us</a>
+	<a href="#">Terms and Conditions</a>
+	<a href="#">FAQs</a>
+	<a href="#">Accessibility</a>
+
+</footer>
+
+	</div>
+</body>
+
+
+</html>
